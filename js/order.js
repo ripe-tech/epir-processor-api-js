@@ -1,8 +1,13 @@
 export const OrderAPI = superclass =>
     class extends superclass {
-        async getOrder(number, mapper) {
-            const url = this.baseUrl + `orders/${number}?mapper=${mapper}`;
-            const contents = await this.get(url);
+        async getOrder(number, options = {}) {
+            const url = this.baseUrl + `orders/${number}`;
+            options = {
+                headers: {
+                    "X-Secret-Key": options.token
+                }
+            };
+            const contents = await this.get(url, options);
             return contents;
         }
     };

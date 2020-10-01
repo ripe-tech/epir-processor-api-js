@@ -1,8 +1,7 @@
 import { API as BaseAPI, mix, load, conf } from "yonius";
 import { OrderAPI } from "./order";
 
-// const EPIR_PROCESSOR_BASE_URL = "https://epir-processor.platforme.com/api/v1/";
-const EPIR_PROCESSOR_BASE_URL = "http://localhost:8001/api/v1/";
+const EPIR_PROCESSOR_BASE_URL = "https://epir-processor.platforme.com/api/v1/";
 
 export class API extends mix(BaseAPI).with(OrderAPI) {
     constructor(kwargs = {}) {
