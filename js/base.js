@@ -24,7 +24,7 @@ export class API extends mix(BaseAPI).with(OrderAPI) {
         delete options.kwargs.auth;
         if (auth) {
             options.headers.Authorization = `Bearer ${this.token}`;
-            options.headers["x-secret-key"] = this.token;
+            options.headers["X-Secret-Key"] = this.token;
         }
     }
 
