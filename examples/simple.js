@@ -2,7 +2,7 @@ const epirProcessor = require("..");
 
 const baseUrl = "http://epir-processor-now.platforme.com/api/v1/";
 const token = process.env.RIPE_CORE_TOKEN;
-const orderNumber = 5555;
+const orderNumber = process.env.ORDER_NUMBER;
 
 async function run() {
     await epirProcessor.API.load();
